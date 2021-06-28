@@ -1,4 +1,4 @@
-# LiveStreamRadio
+# AmasiaStream
 Lightweight 24/7 RTSP (Twitch / YouTube / ReStream / etc) Music Radio using FFMPEG.
 This repo is a fork of [NoniDOTio's work](https://github.com/NoniDOTio/LiveStreamRadio), thanks to him !
 
@@ -50,9 +50,10 @@ ctl.!default {
 }
 ```
 
-THEN RE-LOGIN !!
+- Then exit and re-login to load new ALSA Settings
 
 Check your default card with :
+
 aplay -l
 
 Then, change the default PCM in the asoundrc file, and in the 247Stream.sh file at the Loopback hw device selection (Example: "-i hw:Loopback,1,0" for loopback card #1)
@@ -95,8 +96,6 @@ Every lines will be shuffled at player.sh start
 This will be the image deplayed in the stream background, and it also defines your stream resolution.
 If your image is 720p, your stream will be in 720p, same for 1080p.
 The ffmpeg command is configured to stream at 30 FPS.
-
-Place the image to /path/to/the/git/folder/assets/bg.jpg
 
 ### Adjust config.sh settings
 
