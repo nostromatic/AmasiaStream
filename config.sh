@@ -16,13 +16,16 @@ THREAD_COUNT="6"
 #
 # Filepath of your background video. Must be an JPG or PNG image, 720p or 1080p resolution.
 # Take into account the place for the waveform, and the dynamic text (Artist, album, trackname) overlays
-BACKGROUND="${SCRIPT_DIR}/assets/bg.jpg"
+BACKGROUND="${SCRIPT_DIR}/background.jpg"
+
+#
+# Filepath of your logo. Must be an JPG or PNG image.
+LOGOIMAGE="/mnt/data/streaming_assets/backgrounds/logo_simple_trans.png"
 
 #
 # RTMP URLs you wish to stream to
 #
-RTSPLINK1="rtmp://paris.restream.io/live/re_2084611_3e79043d262eeb3ec309"
-#RTSPLINK1="rtmps://live-api-s.facebook.com:443/rtmp/2614512578800578?s_bl=1&s_ps=1&s_sw=0&s_vt=api-s&a=Abxbchl2bn985qf6"
+RTSPLINK1="rtmp://mrs.contribute.live-video.net/app/live_KEY"
 RTSPLINK2=""
 
 #
@@ -41,8 +44,9 @@ function on_next_track() {
 
   # The following line writes the currently playing song to a text file.
   # You can safely remove it if you don't need this feature
-  echo "${1} / ${2} / ${3}" > ${SCRIPT_DIR}/now_playing.txt
-
+  echo "Artist : ${1}
+Track  : ${2}
+Album  : ${3}" > ${SCRIPT_DIR}/live_data/now_playing.txt
   :
 }
 

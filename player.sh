@@ -1,9 +1,11 @@
+#!/bin/bash
+
 . ./config.sh
 
 while true; do
 
   # Shuffle playlist
-  shuf ${SCRIPT_DIR}/playlist.txt --output=${SCRIPT_DIR}/playlist.txt
+  shuf ${SCRIPT_DIR}/live_data/playlist.txt --output=${SCRIPT_DIR}/live_data/playlist.txt
   on_playlist_reshuffle
   
   while read f; do
@@ -23,7 +25,7 @@ while true; do
     fi
 
     # Execute custom function
-    on_next_track "${current_artist}" "${current_album}" "${current_trackname}"
+    on_next_track "${current_artist}" "${current_trackname}" "${current_album}"
 
     # Play current song with mpg123
     mpg123 "${f}"
@@ -34,5 +36,5 @@ while true; do
     # Play a WAV file
     #aplay "${f}"
 
-  done < playlist.txt
+  done < ${SCRIPT_DIR}/live_data/playlist.txt
 done
