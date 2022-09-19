@@ -76,7 +76,7 @@ arecord --dump-hw-params -D hw:Loopback,1,0
 ## Installation
 Install the required packages, then clone this repository :
 ```bash
-git clone https://github.com/rmeillon/AmasiaStream.git
+git clone https://github.com/nostromatic/AmasiaStream.git
 ```
 
 ## How To Use
