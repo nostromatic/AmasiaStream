@@ -80,28 +80,24 @@ git clone https://github.com/nostromatic/AmasiaStream.git
 ```
 
 ## How To Use
-### Create your music playlist
+1. Create your mp3 playlist
 Create a folder containing all your mp3 files.
 Recommended format is 128kbps MP3 file with 44100Hz of samplerate, if you use mixed formats, ALSA may not be happy.
-
-The create the playlist.txt file containing the full path of every (adjust the path of mp3 folder and playlist.txt)
+Execute this to create the playlist.txt file containing the full path of every mp3 files in a random order (adjust the path of mp3 folder and playlist.txt) :
 ```bash
 cd to/the/mp3/folder
 find $(pwd) -type f -name "*.mp3" > path/to/playlist.txt
 ```
 
-Every lines will be shuffled at player.sh start
-
-### Create your background image
+3. Create your background image or video
 This will be the image deplayed in the stream background, and it also defines your stream resolution.
 If your image is 720p, your stream will be in 720p, same for 1080p.
 The ffmpeg command is configured to stream at 30 FPS.
+Same thing for an mp4 video.
 
-### Adjust config.sh settings
+4. Adjust config.sh settings
 
-
-### Launching the stream
-Use tmux and create 2 terminals
+5. Launching the stream: Use tmux and create 2 terminals
 
 One to launch the stream first (important)
 ```bash
